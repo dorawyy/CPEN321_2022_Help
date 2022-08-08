@@ -62,7 +62,7 @@ async function rateManage(client, type, facilityId, userId, numberOfType, rateSc
         await b.numberOfRate(client, userId); //belongs to user
         return 1;
     }
-    else{return "repeatedly rating"}
+    return "repeatedly rating"
 
      
     // await client.db("Help!Db").collection("users").updateOne(
