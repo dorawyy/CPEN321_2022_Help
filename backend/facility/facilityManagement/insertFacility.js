@@ -1,15 +1,15 @@
 const CreditHandlingNormal = require("/home/azureuser/Test 1/user/credit/creditHandlingNormal");
-async function insertFacility(client,type, newId, title, description, facilityImageLink , timeAdded , long, lat, adderId){
+async function insertFacility(client,type, newId, title, description, facImageLink , addedTime , long, lat, adderId){
     const HandleCredit = new CreditHandlingNormal()
     var FacilityInfo =  {
         "facilityType": type,
         "facility_status": "normal",
         "facilityTitle": title,
         "facilityDescription": description,
-        "facilityImageLink": facilityImageLink,
+        "facilityImageLink": facImageLink,
         "facilityOverallRate": 0,
         "numberOfRates": 0,
-        "timeAdded": timeAdded,
+        "timeAdded": addedTime,
         "longitude": long,
         "latitude": lat
     }
@@ -20,7 +20,7 @@ async function insertFacility(client,type, newId, title, description, facilityIm
         "reviews": [],
         "adderID": adderId
     }
-    if(!type && !newId && !title && !description &&!facilityImageLink && !timeAdded && !adderId){
+    if(!type && !newId && !title && !description &&!facImageLink && !timeAdded && !adderId){
         return {"result":"unsuccesful add with missing field"}
     }
     if(type !="" && type!= "entertainments" && type!="studys" && type!="posts" &&type!="restaurants" && type!="entertainmentstest"){
