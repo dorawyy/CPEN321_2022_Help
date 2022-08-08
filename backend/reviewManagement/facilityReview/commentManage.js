@@ -28,11 +28,11 @@ async function commentManage(client, type, facilityId, userId, userName, rateSco
         var PushContent = {
                             "reviews": {
                                 replierID: userId,
-                                userName: userName,
-                                rateScore:rateScore,
+                                userName,
+                                rateScore,
                                 upVotes: 0,
                                 downVotes: 0,
-                                replyContent: replyContent,
+                                replyContent,
                                 timeOfReply: timeAdded
                             }}
         var MyQuery = {$push: PushContent}
